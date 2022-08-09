@@ -85,3 +85,7 @@ button:hover {
   transition-timing-function: ease-in;
   transition-delay: 0.09s;
 }
+
+.message {
+  color: #fff;
+}
