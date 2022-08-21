@@ -7,7 +7,10 @@ checkBtn.addEventListener("click", function validateBirthdayStatus() {
   const fate = remainder();
   if (fate === 0) {
     messageDeliver("You are lucky !");
-  } else {
+  } else if (fate === false) {
+    messageDeliver("Invalid Number Enterered ! ❌");
+  }
+   else {
     messageDeliver("Better Luck in another life !");
   }
 });
@@ -28,9 +31,15 @@ function sum() {
 function remainder() {
   const numerator = sum();
   const denominator = luckyInput.value;
-  return numerator % denominator;
+
+  if (denominator > 1) {
+    return numerator % denominator
+  } else {
+    return false;
+  }
 }
 
+
 function messageDeliver(reply) {
-  return (msg.innerText = reply);
+  return msg.innerText = reply;
 }
